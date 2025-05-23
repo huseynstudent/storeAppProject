@@ -3,7 +3,7 @@ using StoreAppProject.Models;
 
 namespace StoreAppProject.Services;
 
-public abstract class BaseService<T> where T : BaseModel
+public abstract class BaseService<T> where T : baseModel
 {
     protected StoreAppDatabase _database;
     public BaseService(StoreAppDatabase database)
