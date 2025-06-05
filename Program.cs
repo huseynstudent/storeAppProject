@@ -1,6 +1,7 @@
 ﻿using StoreAppProject.Database;
 using StoreAppProject.Models;
 using StoreAppProject.Services;
+using StoreAppProject.Exceptions;
 
 StoreAppDatabase database = new StoreAppDatabase();
 ProductService productService = new ProductService(database);
@@ -24,7 +25,7 @@ while (isRunning)
     string input = Console.ReadLine();
     if (!int.TryParse(input, out choice))
     {
-        throw new InvalidInputFormatException("Menu choice must be a valid integer.");
+        throw new InvalidInputFormatException();
     }
     try
     {
@@ -158,10 +159,6 @@ while (isRunning)
     {
         Console.WriteLine("Invalid input. Please enter a valid number.");
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"An error occurred: {ex.Message}");
-    }
     catch (InvalidInputFormatException ex)
     {
         Console.WriteLine($"Input format error: {ex.Message}");
@@ -171,3 +168,4 @@ while (isRunning)
         Console.WriteLine("Code finalized");
         Console.Clear();
     }
+}
