@@ -1,7 +1,14 @@
-﻿namespace StoreAppProject.Models
+﻿namespace StoreAppProject.Models;
+
+public abstract class BaseModel
 {
-    public abstract class baseModel
+    private static int _counter = 0;
+
+    public int Id { get; private set; }
+
+    protected BaseModel()
     {
-        public int Id { get; set; }
+        _counter++;
+        Id = _counter;
     }
 }

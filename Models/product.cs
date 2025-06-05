@@ -1,7 +1,7 @@
 ﻿
 namespace StoreAppProject.Models;
 
-public class Product : baseModel
+public class Product : BaseModel
 {
     public string Name { get; set; }
     public string Description { get; set; }

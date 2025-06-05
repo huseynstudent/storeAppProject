@@ -2,7 +2,7 @@
 
 namespace StoreAppProject.Models;
 
-public class Customer : baseModel
+public class Customer : BaseModel
 {
     public string Name { get; set; }
     public string Surname { get; set; }
